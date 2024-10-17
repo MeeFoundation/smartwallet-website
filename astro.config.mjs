@@ -20,14 +20,19 @@ export const header = {
   logoLink: meeFoundation,
   links: [
     {
-      name: "About us",
-      link: `${meeFoundation}about/`,
-      id: "about-us",
+      name: "Products",
+      link: `${meeFoundation}products/`,
+      id: "products",
     },
     {
-      name: "Docs",
-      link: "/docs",
-      id: "docs",
+      name: "Business",
+      link: `${meeFoundation}for-providers/`,
+      id: "business",
+    },
+    {
+      name: "About us",
+      link: `${meeFoundation}about/`,
+      id: "about",
     },
   ],
   rightLinks: [
@@ -41,18 +46,17 @@ export const header = {
   ],
   footerLinks: [
     {
-      link: `${meeFoundation}about/`,
-      name: "About",
-      id: "about",
+      link: `${meeFoundation}privacy-policy/`,
+      name: "Privacy",
+      id: "privacy-policy",
     },
     {
       link: "/docs/",
       name: "Docs",
-      id: "docs",
+      id: "docs"
     },
   ],
 };
-
 export const footer = {
   links: [
     {
@@ -73,8 +77,25 @@ export const footer = {
   ],
   rightLinks: [
     {
+      name: "Products",
+      link: `${meeFoundation}products/`,
+      id: "products",
+    },
+    {
+      name: "Business",
+
+      link: `${meeFoundation}for-providers/`,
+      id: "business",
+    },
+    {
+      name: "About us",
       link: `${meeFoundation}about/`,
-      name: "About",
+      id: "about",
+    },
+    {
+      link: `${meeFoundation}privacy-policy/`,
+      name: "Privacy",
+      id: "privacy-policy",
     },
     {
       link: "/docs/",
