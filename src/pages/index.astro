@@ -2,57 +2,161 @@
 import Layout from "@layouts/Layout.astro";
 import { Header, Footer } from "mee-components";
 import { header, footer } from "../../astro.config.mjs";
+import remoteControl from "../../public/images/remote-control.svg";
+import privacyAndSecurity from "../../public/images/privacy-and-security.svg";
+import privateSharing from "../../public/images/private-sharing.svg";
+import yourDigitalTwin from "../../public/images/your-digital-twin.svg";
+import AppButtons from "@components/AppButtons.astro";
+
+const futures = [
+  {
+    image: remoteControl,
+    title: "A remote control for your personal data",
+    description:
+      "Retrieves your data from apps/sites you use. Organizes it conveniently in one place, and provides a single, central place to edit your data and update all the apps/sites that use it.",
+    class: "col-span-2",
+  },
+  {
+    image: yourDigitalTwin,
+    title: "Your digital twin",
+    description:
+      "An identity agent gives you an independent, digital embodiment that you entirely control.",
+    class: "col-span-1",
+  },
+  {
+    image: privateSharing,
+    title: "Private sharing",
+    description:
+      "Your personal information is never accessible to anyone unless you wish so.",
+    class: "col-span-1",
+  },
+  {
+    image: privacyAndSecurity,
+    title: "Privacy and security",
+    description:
+      "Opts you out of sharing/selling your personal information by websites. Your personal data is stored securely on your device.",
+    class: "col-span-2",
+  },
+];
 ---
 
 <Layout title="Mee Smartwallet">
   <Header header={header} location="Mee Smartwallet" />
   <main class="">
     <article
-      class="relative mt-27 flex h-full min-h-screen w-screen flex-col items-center justify-between gap-16 overflow-hidden"
+      class="relative mt-27 flex h-full w-screen flex-col items-center justify-between gap-8 overflow-hidden md:gap-16"
     >
       <section
-        class="section top-0 z-100 mb-3.5 mt-16 flex h-full w-screen flex-col items-center justify-center md:mt-25"
+        class="section top-0 z-100 mt-10 flex h-full w-screen items-center justify-center md:mt-20"
       >
         <div
-          class="flex max-w-150 flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500 md:p-0"
+          class="flex max-w-3xl flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500"
         >
-          <div class="overflow-hidden">
+          <div class="flex flex-col items-center gap-1 overflow-hidden">
+            <h4 class="titleText text-base font-bold uppercase">
+              Our smartwallet vision
+            </h4>
             <h1
-              class="marker animate-riseIn text-center text-4xl font-semibold text-gray-900 lg:text-7xl lg:tracking-0.02"
+              class="marker animate-riseIn text-center text-4xl font-semibold text-grey-900 lg:text-7xl"
             >
-              Mee Smartwallet
+              Smartwallet Project
             </h1>
+          </div>
+
+          <div class="overflow-hidden">
+            <h3
+              class="text animation-delay-800 animate-riseIn text-pretty px-6 text-center text-xl text-grey-900 md:text-2xl"
+            >
+              Our goal is to develop a trusted identity agent app that both
+              holds your data and acts as a remote control for your personal
+              data wherever it lives.
+            </h3>
           </div>
           <div class="overflow-hidden">
             <a
               class="animation-delay-800 block w-full animate-riseIn px-6 text-center text-xl leading-relaxed text-brand-600 underline md:text-2xl"
               href="/docs"
             >
-              Docs <i class="bi bi-arrow-right"></i>
+              Smartwallet docs <i class="bi bi-arrow-right"></i>
             </a>
           </div>
-	  <div class="overflow-hidden">
-	    <p
-              class="marker mt-7 animate-riseIn text-3xl font-bold leading-thick md:text-4xl md:leading-normal lg:mt-13 lg:text-5xl">
-              Our goal: To develop a trusted identity agent app that both holds your data and acts as a remote control for your personal data wherever it lives.
-            </p>
-	  </div>
         </div>
       </section>
-      <div><Footer footer={footer} mode="dark" /></div>
+      <section
+        class="flex h-auto max-w-7xl flex-col items-center justify-center px-6"
+      >
+        <div class="overflow-hidden">
+          <div class="animate-riseIn">
+            <div
+              class="flex max-w-96 flex-wrap items-center justify-center gap-8 md:grid md:max-w-max md:grid-cols-2 lg:grid-cols-3"
+            >
+              {
+                futures.map((future) => (
+                  <div
+                    class:list={[
+                      "h-full rounded-2xl border border-grey-300",
+                      future.class,
+                    ]}
+                  >
+                    <img
+                      src={future.image.src}
+                      class="w-full"
+                      alt={`${future.title}`}
+                    />
+                    <div class="flex flex-col gap-2 p-8 pt-0">
+                      <div class="flex items-center gap-2 text-left text-xl font-semibold text-grey-900 lg:text-2xl">
+                        {future.title}
+                      </div>
+                      <div class="text-sm text-grey-800 lg:text-base">
+                        {future.description}
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="z-100 mb-27 mt-16 flex h-full w-screen max-w-7xl flex-col items-center justify-center gap-10 md:gap-20"
+      >
+        <div
+          class="flex flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500"
+        >
+          <div class="overflow-hidden">
+            <h1
+              class="marker animate-riseIn text-center text-3xl font-semibold text-grey-900 lg:text-5xl lg:tracking-0.02"
+            >
+              Get the latest build of our experimental app
+            </h1>
+          </div>
+          <div class="overflow-hidden">
+            <h3
+              class="text animation-delay-800 animate-riseIn text-pretty px-6 text-center text-xl leading-relaxed text-grey-900 md:text-2xl"
+            >
+              Available for iOS and Android. Support for desktop platforms is
+              planned.
+            </h3>
+          </div>
+        </div>
+        <div class="overflow-hidden">
+          <div class="animate-riseIn">
+            <AppButtons btnSize="normal" noDescription={true} class="z-100" />
+          </div>
+        </div>
+      </section>
+      <Footer footer={footer} mode="dark" />
     </article>
   </main>
 </Layout>
+
 <style>
-  .bg-1 {
-    content: "";
-    position: absolute;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    min-height: 150vh;
-    height: 140%;
-    transform: translate3d(0, 0, 0);
-    z-index: 1;
-    width: 400vw;
+  .titleText {
+    background: linear-gradient(180deg, #4f868e 1.49%, #1d2a2f 98.98%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
 </style>
