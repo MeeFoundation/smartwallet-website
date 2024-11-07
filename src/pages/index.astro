@@ -52,70 +52,62 @@ const futures = [
         <div
           class="flex max-w-3xl flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500"
         >
-          <div class="flex flex-col items-center gap-1 overflow-hidden">
+          <div class="flex flex-col items-center gap-1">
             <h4 class="titleText text-base font-bold uppercase">
               Our smartwallet vision
             </h4>
             <h1
-              class="marker animate-riseIn text-center text-4xl font-semibold text-grey-900 lg:text-7xl"
+              class="marker text-center text-4xl font-semibold text-grey-900 lg:text-7xl"
             >
               Smartwallet Project
             </h1>
           </div>
 
-          <div class="overflow-hidden">
-            <h3
-              class="text animation-delay-800 animate-riseIn text-pretty px-6 text-center text-xl text-grey-900 md:text-2xl"
-            >
-              Our goal is to develop a trusted identity agent app that both
-              holds your data and acts as a remote control for your personal
-              data wherever it lives.
-            </h3>
-          </div>
-          <div class="overflow-hidden">
-            <a
-              class="animation-delay-800 block w-full animate-riseIn px-6 text-center text-xl leading-relaxed text-brand-600 underline md:text-2xl"
-              href="/docs"
-            >
-              Smartwallet docs <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
+          <h3
+            class="text text-pretty px-6 text-center text-xl text-grey-900 md:text-2xl"
+          >
+            Our goal is to develop a trusted identity agent app that both holds
+            your data and acts as a remote control for your personal data
+            wherever it lives.
+          </h3>
+          <a
+            class="block w-full px-6 text-center text-xl leading-relaxed text-brand-600 underline md:text-2xl"
+            href="/docs"
+          >
+            Smartwallet docs <i class="bi bi-arrow-right"></i>
+          </a>
         </div>
       </section>
       <section
         class="flex h-auto max-w-7xl flex-col items-center justify-center px-6"
       >
-        <div class="overflow-hidden">
-          <div class="animate-riseIn">
-            <div
-              class="flex max-w-96 flex-wrap items-center justify-center gap-8 md:grid md:max-w-max md:grid-cols-2 lg:grid-cols-3"
-            >
-              {
-                futures.map((future) => (
-                  <div
-                    class:list={[
-                      "h-full rounded-2xl border border-grey-300",
-                      future.class,
-                    ]}
-                  >
-                    <img
-                      src={future.image.src}
-                      class="w-full"
-                      alt={`${future.title}`}
-                    />
-                    <div class="flex flex-col gap-2 p-8 pt-0">
-                      <div class="flex items-center gap-2 text-left text-xl font-semibold text-grey-900 lg:text-2xl">
-                        {future.title}
-                      </div>
-                      <div class="text-sm text-grey-800 lg:text-base">
-                        {future.description}
-                      </div>
-                    </div>
+        <div
+          class="flex max-w-96 flex-wrap items-center justify-center gap-8 md:grid md:max-w-max md:grid-cols-2 lg:grid-cols-3"
+        >
+          {
+            futures.map((future) => (
+              <div
+                class:list={[
+                  "h-full rounded-2xl border border-grey-300",
+                  future.class,
+                ]}
+              >
+                <img
+                  src={future.image.src}
+                  class="w-full"
+                  alt={`${future.title}`}
+                />
+                <div class="flex flex-col gap-2 p-8 pt-0">
+                  <div class="flex items-center gap-2 text-left text-xl font-semibold text-grey-900 lg:text-2xl">
+                    {future.title}
                   </div>
-                ))
-              }
-            </div>
-          </div>
+                  <div class="text-sm text-grey-800 lg:text-base">
+                    {future.description}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
         </div>
       </section>
       <section
@@ -124,27 +116,19 @@ const futures = [
         <div
           class="flex flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500"
         >
-          <div class="overflow-hidden">
-            <h1
-              class="marker animate-riseIn text-center text-3xl font-semibold text-grey-900 lg:text-5xl lg:tracking-0.02"
-            >
-              Get the latest build of our experimental app
-            </h1>
-          </div>
-          <div class="overflow-hidden">
-            <h3
-              class="text animation-delay-800 animate-riseIn text-pretty px-6 text-center text-xl leading-relaxed text-grey-900 md:text-2xl"
-            >
-              Available for iOS and Android. Support for desktop platforms is
-              planned.
-            </h3>
-          </div>
+          <h1
+            class="marker text-center text-3xl font-semibold text-grey-900 lg:text-5xl lg:tracking-0.02"
+          >
+            Get the latest build of our experimental app
+          </h1>
+          <h3
+            class="text text-pretty px-6 text-center text-xl leading-relaxed text-grey-900 md:text-2xl"
+          >
+            Available for iOS and Android. Support for desktop platforms is
+            planned.
+          </h3>
         </div>
-        <div class="overflow-hidden">
-          <div class="animate-riseIn">
-            <AppButtons btnSize="normal" noDescription={true} class="z-100" />
-          </div>
-        </div>
+        <AppButtons btnSize="normal" noDescription={true} class="z-100" />
       </section>
       <Footer footer={footer} mode="dark" />
     </article>
