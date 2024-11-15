@@ -24,9 +24,9 @@ export const header = {
       id: "projects",
     },
     {
-      name: "Business",
-      link: `${meeFoundation}for-providers/`,
-      id: "business",
+      name: 'Businesses',
+      link: `${meeFoundation}businesses/`,
+      id: 'businesses',
     },
     {
       name: "About us",
@@ -81,10 +81,9 @@ export const footer = {
       id: "projects",
     },
     {
-      name: "Business",
-
-      link: `${meeFoundation}for-providers/`,
-      id: "business",
+      name: 'Businesses',
+      link: `${meeFoundation}businesses/`,
+      id: 'businesses',
     },
     {
       name: "About us",
