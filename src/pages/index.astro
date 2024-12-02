@@ -2,14 +2,19 @@
 import Layout from "@layouts/Layout.astro";
 import { Header, Footer, AppButtons } from "mee-components";
 import { header, footer } from "../../astro.config.mjs";
-import remoteControl from "../../public/images/remote-control.svg";
-import privacyAndSecurity from "../../public/images/privacy-and-security.svg";
-import privateSharing from "../../public/images/private-sharing.svg";
-import yourDigitalTwin from "../../public/images/your-digital-twin.svg";
+import remoteControl from "../../public/images/remote-control.png";
+import remoteControlDark from "../../public/images/remote-control-dark.png";
+import privacyAndSecurity from "../../public/images/privacy-and-security.png";
+import privacyAndSecurityDark from "../../public/images/privacy-and-security-dark.png";
+import privateSharing from "../../public/images/private-sharing.png";
+import privateSharingDark from "../../public/images/private-sharing-dark.png";
+import yourDigitalTwin from "../../public/images/your-digital-twin.png";
+import yourDigitalTwinDark from "../../public/images/your-digital-twin-dark.png";
 
 const futures = [
   {
     image: remoteControl,
+    imageDark: remoteControlDark,
     title: "A remote control for your personal data",
     description:
       "Retrieves your data from apps/sites you use. Organizes it conveniently in one place, and provides a single, central place to edit your data and update all the apps/sites that use it.",
@@ -17,6 +22,7 @@ const futures = [
   },
   {
     image: yourDigitalTwin,
+    imageDark: yourDigitalTwinDark,
     title: "Your digital twin",
     description:
       "An identity agent gives you an independent, digital embodiment that you entirely control.",
@@ -24,6 +30,7 @@ const futures = [
   },
   {
     image: privateSharing,
+    imageDark: privateSharingDark,
     title: "Private sharing",
     description:
       "Your personal information is never accessible to anyone unless you wish so.",
@@ -31,6 +38,7 @@ const futures = [
   },
   {
     image: privacyAndSecurity,
+    imageDark: privacyAndSecurityDark,
     title: "Privacy and security",
     description:
       "Opts you out of sharing/selling your personal information by websites. Your personal data is stored securely on your device.",
@@ -56,21 +64,21 @@ const futures = [
               Our smartwallet vision
             </h4>
             <h1
-              class="marker text-center text-4xl font-semibold text-grey-900 lg:text-7xl"
+              class="marker text-center text-4xl font-semibold text-grey-900 lg:text-7xl dark:text-grey-50"
             >
               Smartwallet Project
             </h1>
           </div>
 
           <h3
-            class="text text-pretty px-6 text-center text-xl text-grey-900 md:text-2xl"
+            class="text text-pretty px-6 text-center text-xl text-grey-900 md:text-2xl dark:text-grey-300"
           >
             Our goal is to develop a trusted identity agent app that both holds
             your data and acts as a remote control for your personal data
             wherever it lives.
           </h3>
           <a
-            class="block w-full px-6 text-center text-xl leading-relaxed text-brand-600 underline md:text-2xl"
+            class="block w-full px-6 text-center text-xl leading-relaxed text-brand-600 underline md:text-2xl dark:text-brand-300"
             href="/docs"
           >
             Smartwallet docs <i class="bi bi-arrow-right"></i>
@@ -87,20 +95,25 @@ const futures = [
             futures.map((future) => (
               <div
                 class:list={[
-                  "h-full rounded-2xl border border-grey-300",
+                  "h-full rounded-2xl border border-grey-300 dark:border-grey-600",
                   future.class,
                 ]}
               >
                 <img
                   src={future.image.src}
-                  class="w-full"
+                  class="w-full dark:hidden"
+                  alt={`${future.title}`}
+                />
+                <img
+                  src={future.imageDark.src}
+                  class="hidden w-full dark:block"
                   alt={`${future.title}`}
                 />
                 <div class="flex flex-col gap-2 p-8 pt-0">
-                  <div class="flex items-center gap-2 text-left text-xl font-semibold text-grey-900 lg:text-2xl">
+                  <div class="flex items-center gap-2 text-left text-xl font-semibold text-grey-900 lg:text-2xl dark:text-grey-50">
                     {future.title}
                   </div>
-                  <div class="text-sm text-grey-800 lg:text-base">
+                  <div class="text-sm text-grey-800 lg:text-base dark:text-grey-300">
                     {future.description}
                   </div>
                 </div>
@@ -116,12 +129,12 @@ const futures = [
           class="flex flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500"
         >
           <h1
-            class="marker text-center text-3xl font-semibold text-grey-900 lg:text-5xl lg:tracking-0.02"
+            class="marker text-center text-3xl font-semibold text-grey-900 lg:text-5xl lg:tracking-0.02 dark:text-grey-50"
           >
             Get the latest build of our experimental app
           </h1>
           <h3
-            class="text text-pretty px-6 text-center text-xl leading-relaxed text-grey-900 md:text-2xl"
+            class="text text-pretty px-6 text-center text-xl leading-relaxed text-grey-900 md:text-2xl dark:text-grey-300"
           >
             Available for iOS and Android. Support for desktop platforms is
             planned.
@@ -134,9 +147,17 @@ const futures = [
   </main>
 </Layout>
 
-<style>
+<style is:global>
   .titleText {
     background: linear-gradient(180deg, #4f868e 1.49%, #1d2a2f 98.98%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+
+  .dark .titleText {
+    background: linear-gradient(90deg, #4f868e 1.49%, #f3f8f8 98.98%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
