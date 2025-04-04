@@ -2,47 +2,39 @@
 import Layout from "@layouts/Layout.astro";
 import { Header, Footer, AppButtons } from "mee-components";
 import { header, footer } from "../config";
-import remoteControl from "../../public/images/remote-control.png";
-import remoteControlDark from "../../public/images/remote-control-dark.png";
-import privacyAndSecurity from "../../public/images/privacy-and-security.png";
-import privacyAndSecurityDark from "../../public/images/privacy-and-security-dark.png";
-import privateSharing from "../../public/images/private-sharing.png";
-import privateSharingDark from "../../public/images/private-sharing-dark.png";
-import yourDigitalTwin from "../../public/images/your-digital-twin.png";
-import yourDigitalTwinDark from "../../public/images/your-digital-twin-dark.png";
 
 const futures = [
   {
-    image: remoteControl,
-    imageDark: remoteControlDark,
-    title: "A remote control for your personal data",
+    image: "/images/personal-data-controller.svg",
+    imageDark: "/images/personal-data-controller-dark.svg",
+    title: "Private profile sharing.",
     description:
-      "Retrieves your data from apps/sites you use. Organizes it conveniently in one place, and provides a single, central place to edit your data and update all the apps/sites that use it.",
-    class: "col-span-2",
+      "Mee lets you control what others know about you. When you create a connection, you can chose what (if anything) to share with another person or company, and for how long.",
+      class: "col-span-2",
   },
   {
-    image: yourDigitalTwin,
-    imageDark: yourDigitalTwinDark,
-    title: "Your digital twin",
+    image: "/images/personal-data-storage.svg",
+    imageDark: "/images/personal-data-storage-dark.svg",
+    title: "Contact sharing between friends",
     description:
-      "An identity agent gives you an independent, digital embodiment that you entirely control.",
-    class: "col-span-1",
+      "If you’d like a friend, family member or colleague to always have your latest home address (and you to have theirs), use the Mee app to send them a connection request link. After they tap the link, Mee will open and they can accept your connection request. After they do you’ll both always have each other’s home address. Effortlessly.",
+      class: "col-span-1",
   },
   {
-    image: privateSharing,
-    imageDark: privateSharingDark,
-    title: "Private sharing",
+    image: "/images/limits-app.svg",
+    imageDark: "/images/limits-app-dark.svg",
+    title: "Auto-update account profiles on websites and apps",
     description:
-      "Your personal information is never accessible to anyone unless you wish so.",
-    class: "col-span-1",
+      "If you create a connection with a Mee-compatible company, for as long as you wish they can pull and use the latest information from your Mee. When you update it in Mee, every company you’re connected to automatically receives the updated information.",
+      class: "col-span-1",
   },
   {
-    image: privacyAndSecurity,
-    imageDark: privacyAndSecurityDark,
-    title: "Privacy and security",
+    image: "/images/browser.png",
+    imageDark: "/images/browser-dark.png",
+    title: "Privacy first",
     description:
-      "Opts you out of sharing/selling your personal information by websites. Your personal data is stored securely on your device.",
-    class: "col-span-2",
+      "Mee puts you in control of your profile sharing connections to companies and other people. At any time, you can stop them from getting further updates, prevent them from sharing your information, and even automatically delete the data they have about you. Your information is never stored or monetized by The Mee Foundation.",
+      class: "col-span-2",
   },
 ];
 ---
@@ -73,16 +65,11 @@ const futures = [
           <h3
             class="text text-pretty px-6 text-center text-xl text-grey-900 md:text-2xl dark:text-grey-300"
           >
-            Our goal is to develop a trusted identity agent app that both holds
-            your data and acts as a remote control for your personal data
-            wherever it lives.
+            We’re bringing the power of Mee to your device. The Mee smartwallet
+            app manages your profile sharing relationships with other people and
+            companies as a dashboard of “connections”. It also includes an
+            on-device datastore of your personal data.
           </h3>
-          <a
-            class="block w-full px-6 text-center text-xl leading-relaxed text-brand-600 underline md:text-2xl dark:text-brand-300"
-            href="/docs"
-          >
-            Smartwallet docs <i class="bi bi-arrow-right"></i>
-          </a>
         </div>
       </section>
       <section
@@ -100,13 +87,13 @@ const futures = [
                 ]}
               >
                 <img
-                  src={future.image.src}
-                  class="w-full dark:hidden"
+                  src={future.image}
+                  class="w-full dark:hidden rounded-t-2xl"
                   alt={`${future.title}`}
                 />
                 <img
-                  src={future.imageDark.src}
-                  class="hidden w-full dark:block"
+                  src={future.imageDark}
+                  class="hidden w-full dark:block rounded-t-2xl"
                   alt={`${future.title}`}
                 />
                 <div class="flex flex-col gap-2 p-8 pt-0">
