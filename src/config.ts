@@ -6,9 +6,9 @@ export const header = {
   logoLink: meeFoundation,
   links: [
     {
-      name: "Projects",
-      link: `${meeFoundation}projects/`,
-      id: "projects",
+      name: "Products",
+      link: `${meeFoundation}products/`,
+      id: "products",
     },
     {
       name: "Businesses",
@@ -67,9 +67,9 @@ export const footer = {
   ],
   rightLinks: [
     {
-      name: "Projects",
-      link: `${meeFoundation}projects/`,
-      id: "projects",
+      name: "Products",
+      link: `${meeFoundation}products/`,
+      id: "products",
     },
     {
       name: "Businesses",
