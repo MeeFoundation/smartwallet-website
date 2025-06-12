@@ -11,11 +11,6 @@ export const header = {
       id: "products",
     },
     {
-      name: "Businesses",
-      link: `${meeFoundation}businesses/`,
-      id: "businesses",
-    },
-    {
       name: "About us",
       link: `${meeFoundation}about/`,
       id: "about",
@@ -70,11 +65,6 @@ export const footer = {
       name: "Products",
       link: `${meeFoundation}products/`,
       id: "products",
-    },
-    {
-      name: "Businesses",
-      link: `${meeFoundation}businesses/`,
-      id: "businesses",
     },
     {
       name: "About us",
