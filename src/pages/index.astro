@@ -1,16 +1,16 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { Header, Footer, AppButtons } from "mee-components";
-import { header, footer } from "../config";
+import { AppButtons, Footer, Header } from "mee-components";
+import { footer, header } from "../config";
 
 const futures = [
   {
     image: "/images/personal-data-controller.svg",
     imageDark: "/images/personal-data-controller-dark.svg",
-    title: "Private profile sharing.",
+    title: "Private profile sharing",
     description:
       "Mee lets you control what others know about you. When you create a connection, you can chose what (if anything) to share with another person or company, and for how long.",
-      class: "col-span-2",
+    class: "col-span-2",
   },
   {
     image: "/images/personal-data-storage.svg",
@@ -18,7 +18,7 @@ const futures = [
     title: "Contact sharing between friends",
     description:
       "If you’d like a friend, family member or colleague to always have your latest home address (and you to have theirs), use the Mee app to send them a connection request link. After they tap the link, Mee will open and they can accept your connection request. After they do you’ll both always have each other’s home address. Effortlessly.",
-      class: "col-span-1",
+    class: "col-span-1",
   },
   {
     image: "/images/limits-app.svg",
@@ -26,7 +26,7 @@ const futures = [
     title: "Auto-update account profiles on websites and apps",
     description:
       "If you create a connection with a Mee-compatible company, for as long as you wish they can pull and use the latest information from your Mee. When you update it in Mee, every company you’re connected to automatically receives the updated information.",
-      class: "col-span-1",
+    class: "col-span-1",
   },
   {
     image: "/images/browser.png",
@@ -34,7 +34,7 @@ const futures = [
     title: "Privacy first",
     description:
       "Mee puts you in control of your profile sharing connections to companies and other people. At any time, you can stop them from getting further updates, prevent them from sharing your information, and even automatically delete the data they have about you. Your information is never stored or monetized by The Mee Foundation.",
-      class: "col-span-2",
+    class: "col-span-2",
   },
 ];
 ---
@@ -45,64 +45,36 @@ const futures = [
     <article
       class="relative mt-27 flex h-full w-screen flex-col items-center justify-between gap-8 overflow-hidden md:gap-16"
     >
-      <section
-        class="section top-0 z-100 mt-10 flex h-full w-screen items-center justify-center md:mt-20"
-      >
-        <div
-          class="flex max-w-3xl flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500"
-        >
+      <section class="section top-0 z-100 mt-10 flex h-full w-screen items-center justify-center md:mt-20">
+        <div class="flex max-w-3xl flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500">
           <div class="flex flex-col items-center gap-1">
-            <h4 class="titleText text-base font-bold uppercase">
-              Under development
-            </h4>
-            <h1
-              class="marker text-center text-4xl font-semibold text-grey-900 lg:text-7xl dark:text-grey-50"
-            >
-              Smartwallet Project
+            <h4 class="titleText text-base font-bold uppercase">Under development</h4>
+            <h1 class="marker text-center text-4xl font-semibold text-grey-900 lg:text-7xl dark:text-grey-50">
+              Smartwallet
             </h1>
           </div>
 
-          <h2
-            class="text text-pretty px-6 text-center text-xl text-grey-900 md:text-2xl dark:text-grey-300"
-          >
-            We’re bringing the power of Mee to your device. The Mee smartwallet
-            app manages your profile sharing relationships with other people and
-            companies as a dashboard of “connections”. It also includes an
-            on-device datastore of your personal data.
+          <h2 class="text text-pretty px-6 text-center text-xl text-grey-900 md:text-2xl dark:text-grey-300">
+            We’re bringing the power of Mee to your device. The Mee smartwallet app manages your profile sharing
+            relationships with other people and companies as a dashboard of “connections”. It also includes an on-device
+            datastore of your personal data.
           </h2>
         </div>
       </section>
-      <section
-        class="flex h-auto max-w-7xl flex-col items-center justify-center px-6"
-      >
+      <section class="flex h-auto max-w-7xl flex-col items-center justify-center px-6">
         <div
           class="flex max-w-96 flex-wrap items-center justify-center gap-8 md:grid md:max-w-max md:grid-cols-2 lg:grid-cols-3"
         >
           {
             futures.map((future) => (
-              <div
-                class:list={[
-                  "h-full rounded-2xl border border-grey-300 dark:border-grey-600",
-                  future.class,
-                ]}
-              >
-                <img
-                  src={future.image}
-                  class="w-full dark:hidden rounded-t-2xl"
-                  alt={`${future.title}`}
-                />
-                <img
-                  src={future.imageDark}
-                  class="hidden w-full dark:block rounded-t-2xl"
-                  alt={`${future.title}`}
-                />
+              <div class:list={["h-full rounded-2xl border border-grey-300 dark:border-grey-600", future.class]}>
+                <img src={future.image} class="w-full rounded-t-2xl dark:hidden" alt={`${future.title}`} />
+                <img src={future.imageDark} class="hidden w-full rounded-t-2xl dark:block" alt={`${future.title}`} />
                 <div class="flex flex-col gap-2 p-8 pt-0">
                   <div class="flex items-center gap-2 text-left text-xl font-semibold text-grey-900 lg:text-2xl dark:text-grey-50">
                     {future.title}
                   </div>
-                  <div class="text-sm text-grey-800 lg:text-base dark:text-grey-300">
-                    {future.description}
-                  </div>
+                  <div class="text-sm text-grey-800 lg:text-base dark:text-grey-300">{future.description}</div>
                 </div>
               </div>
             ))
@@ -112,9 +84,7 @@ const futures = [
       <section
         class="z-100 mb-27 mt-16 flex h-full w-screen max-w-7xl flex-col items-center justify-center gap-10 md:gap-20"
       >
-        <div
-          class="flex flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500"
-        >
+        <div class="flex flex-col items-center justify-center gap-4 px-6 transition-opacity duration-500">
           <h1
             class="marker text-center text-3xl font-semibold text-grey-900 lg:text-5xl lg:tracking-0.02 dark:text-grey-50"
           >
@@ -123,8 +93,7 @@ const futures = [
           <h2
             class="text text-pretty px-6 text-center text-xl leading-relaxed text-grey-900 md:text-2xl dark:text-grey-300"
           >
-            Available for iOS and Android. Support for desktop platforms is
-            planned.
+            Available for iOS and Android. Support for desktop platforms is planned.
           </h2>
         </div>
         <AppButtons btnSize="normal" noDescription={true} class="z-100" />
